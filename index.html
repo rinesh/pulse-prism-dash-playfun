@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Pulse Prism Dash</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at top, #12305b 0%, #08101f 38%, #04060c 100%);
+        color: #f4fbff;
+        font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+      }
+
+      body {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overscroll-behavior: none;
+        touch-action: none;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      #game-container {
+        position: fixed;
+        inset: 0;
+        width: 100vw !important;
+        height: 100vh !important;
+        height: 100svh !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      canvas {
+        display: block;
+        max-width: 100vw;
+        max-height: 100vh;
+        max-height: 100svh;
+        margin: 0 !important;
+        touch-action: none;
+      }
+
+      #mobile-rotate-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background:
+          linear-gradient(180deg, rgba(5, 10, 19, 0.88), rgba(3, 6, 12, 0.94));
+        backdrop-filter: blur(12px);
+      }
+
+      body.mobile-portrait #mobile-rotate-overlay {
+        display: flex;
+      }
+
+      body.mobile-portrait canvas {
+        opacity: 0.18;
+      }
+
+      .rotate-card {
+        width: min(100%, 320px);
+        padding: 24px 22px;
+        border: 1px solid rgba(244, 251, 255, 0.16);
+        border-radius: 24px;
+        background: rgba(10, 20, 36, 0.92);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+        text-align: center;
+      }
+
+      .rotate-card__eyebrow {
+        margin-bottom: 10px;
+        color: #86ddff;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .rotate-card h1 {
+        margin-bottom: 12px;
+        font-size: 1.9rem;
+        line-height: 1.05;
+      }
+
+      .rotate-card p {
+        color: #d7ecff;
+        font-size: 0.98rem;
+        line-height: 1.45;
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-eX7C7KI-.js"></script>
+  </head>
+  <body>
+    <div id="game-container"></div>
+    <div id="mobile-rotate-overlay" aria-live="polite" aria-hidden="true" hidden>
+      <div class="rotate-card">
+        <p class="rotate-card__eyebrow">Mobile Layout</p>
+        <h1>Rotate to landscape</h1>
+        <p>Pulse Prism Dash needs the wider view for jump timing. Turn your phone sideways, then tap anywhere to play.</p>
+      </div>
+    </div>
+  </body>
+</html>
